@@ -387,3 +387,139 @@
 .alert-page{
 	margin-bottom: 20px;
 }
+
+.food-content{
+	margin-top: 50px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+
+.food-table{
+	background-color: #ffffff;
+}
+
+.food-table h{
+	background-color: rgb(249,110,87);
+	color: #ffffff;
+	font-family: Microsoft YaHei;
+	font-size: 2rem;
+	margin-left: 1vw;
+	margin-top: 3vh;
+}
+
+.food-table table{
+	margin-top: 1vh;
+	text-align: center;
+}
+
+.food-table table caption{
+	font-family: Microsoft YaHei;
+	font-size: 3rem;
+	text-align: center;
+	padding-top: 0;
+}
+
+.food-search{
+	background-color: #ffffff;
+	width: 75%;
+	margin-left: 4vw;
+	padding-bottom: 1vh;
+}
+
+.food-search label{
+	display: block;
+	padding-top: 2vh;
+	padding-left: 2vw;
+	font-family: Microsoft YaHei;
+    font-size: 1.5rem;
+    color: #337ab7;
+}
+
+.food-search button{
+	display: block;
+	width: 50%;
+	margin-top: 2vh;
+	margin-bottom: 2vh;
+	margin-left: 6vw;
+	background-color: #539337;
+	color: #fbfdf8;
+}
+
+.food-search input{
+	width: 80%;
+	margin-left: 2vw;
+}
+
+.food-total{
+	background-color: #ffffff;
+	width: 75%;
+	margin-left: 4vw;
+	padding-bottom: 1vh;
+	margin-top: 4vh;
+}
+
+.food-total h{
+	background-color: rgb(249,110,87);
+	color: #ffffff;
+	font-family: Microsoft YaHei;
+	font-size: 2rem;
+}
+
+.personal-info{
+	background-color: #51c28a;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	padding-left: 3vw;
+	padding-right: 3vw;
+	padding-top: 2px;
+	margin-top: 4vh;
+}
+
+.personal-item{
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #eeeeee;
+	width: 50%;
+	margin-left: 10px;
+}
+
+.personal-info h{
+	font-family: Microsoft YaHei;
+    font-size: 2.5rem;
+    margin-top: 10px;
+    color: #022220;
+}
+
+.personal-info p{
+    font-family: Microsoft YaHei;
+    font-size: 2.5rem;
+    margin-left: 35px;
+    margin-top: 10px;
+    color: #fbfdf8;
+}
+
+.personal-right{
+	border-left-style: solid;
+	border-left-width: 2px;
+	border-left-color: #eeeeee;
+}
+
+.head-photo{
+	margin-top: 20px;
+}
+
+.personal-item-head{
+	margin-top: 4vh;
+	margin-bottom: 4vh;
+	width: 50%;
+	margin-left: 10px;
+}
+
+.personal-item-head h{
+	background-color: rgb(249,110,87);
+	color: #ffffff;
+	font-family: Microsoft YaHei;
+	font-size: 2rem;
+}
