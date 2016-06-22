@@ -13,12 +13,12 @@
     <div class="container-fluid">
     	<div class="row">
     		<div class="col-md-8 login-left">
-    			<form class="login-form">
+    			<form class="login-form" action="../php/login.php" method="post">
     			    <label>用户名：</label>
     			    <input type="text" name="username" id="username" class="form-control" placeholder="请输入微信号/手机号...">
     			    <label>密码：</label>
-    			    <input type="text" name="userpassowrd" id="userpassword" class="form-control" placeholder="请输入密码...">
-    			    <button type="button" class="btn btn-default" id="login-button">登陆</button>
+    			    <input type="text" name="password" id="userpassword" class="form-control" placeholder="请输入密码...">
+    			    <button type="submit" class="btn btn-default" id="login-button">登陆</button>
     			</form>
     		</div>
     		<div class="col-md-4 login-right">

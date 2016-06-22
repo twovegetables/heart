@@ -1,3 +1,5 @@
+<?php require '../php/isLogin.php' ?>
+
 <!doctype html>
 <html>
 <head>
@@ -13,25 +15,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row header">
-            <div class="col-md-3 header-left">
-                <span><img src="../images/bg.png" alt="image" class="img-circle" id="index-image"></span>
-                <span id="elder-name">李奶奶</span>
-            </div>
-            <div class="col-md-8 header-middle">
-                <div class="dropdown">
-                    <button class="dropbtn">李奶奶</button>
-                    <div class="dropdown-content">
-                        <a href="#">李爷爷</a>
-                        <a href="#">王奶奶</a>
-                        <a href="#">王爷爷</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-                <i class="icon-home icon-white"></i>
-            </div>
-        </div>
+        <?php require 'header.php' ?>
         <div class="row">
             <div class="col-md-2 left-navbar">
                 <ul>

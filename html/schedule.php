@@ -1,3 +1,4 @@
+<?php require '../php/isLogin.php' ?>
 <!doctype html>
 <html>
 <head>
@@ -11,33 +12,15 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row header">
-            <div class="col-md-3 header-left">
-                <span><img src="../images/bg.png" alt="image" class="img-circle" id="index-image"></span>
-                <span id="elder-name">李奶奶</span>
-            </div>
-            <div class="col-md-8 header-middle">
-                <div class="dropdown">
-                    <button class="dropbtn">李奶奶</button>
-                    <div class="dropdown-content">
-                        <a href="#">李爷爷</a>
-                        <a href="#">王奶奶</a>
-                        <a href="#">王爷爷</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-                <i class="icon-home icon-white"></i>
-            </div>
-        </div>
-        <div class="row">
+    <?php require 'header.php' ?>
+    <div class="row">
             <div class="col-md-2 left-navbar">
                 <ul>
-                    <a href="personal.html"><li>个人信息</li></a>
-                    <a href="health.html"><li>健康档案</li></a>
-                    <li id="item3">活动信息</li>
-                    <a href="food.html"><li>饮食信息</li></a>
-                    <a href="alert.html"><li>警报记录</li></a>
+                    <li id="item1">个人信息</li>
+                    <a href="health.php"><li>健康档案</li></a>
+                    <a href="schedule.php"><li>活动信息</li></a>
+                    <a href="food.php"><li>饮食信息</li></a>
+                    <a href="alert.php"><li>警报记录</li></a>
                 </ul>
             </div>
             <div class="col-md-10 main-content">

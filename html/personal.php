@@ -1,3 +1,5 @@
+<?php require '../php/isLogin.php' ?>
+
 <!doctype html>
 <html>
 <head>
@@ -11,33 +13,19 @@
 </head>
 <body>
     <div class="container-fluid">
-    	<div class="row header">
-            <div class="col-md-3 header-left">
-                <span><img src="../images/bg.png" alt="image" class="img-circle" id="index-image"></span>
-                <span id="elder-name">李奶奶</span>
-            </div>
-            <div class="col-md-8 header-middle">
-                <div class="dropdown">
-                    <button class="dropbtn">李奶奶</button>
-                    <div class="dropdown-content">
-                        <a href="#">李爷爷</a>
-                        <a href="#">王奶奶</a>
-                        <a href="#">王爷爷</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-1">
-                <i class="icon-home icon-white"></i>
-            </div>
-    	</div>
+    	<?php 
+        require 'header.php';
+        $result=mysqli_query($con,"select * from older where older_id=$older_id");
+        $row=mysqli_fetch_array($result);
+         ?>
         <div class="row">
             <div class="col-md-2 left-navbar">
                 <ul>
                     <li id="item1">个人信息</li>
-                    <a href="health.html"><li>健康档案</li></a>
-                    <a href="schedule.html"><li>活动信息</li></a>
-                    <a href="food.html"><li>饮食信息</li></a>
-                    <a href="alert.html"><li>警报记录</li></a>
+                    <a href="health.php"><li>健康档案</li></a>
+                    <a href="schedule.php"><li>活动信息</li></a>
+                    <a href="food.php"><li>饮食信息</li></a>
+                    <a href="alert.php"><li>警报记录</li></a>
                 </ul>
             </div>
             <div class="col-md-10 main-content">
@@ -49,27 +37,27 @@
                             </div>
                             <div class="personal-item">
                                 <h>ID：</h>
-                                <p>iso14515</p>
+                                <p><?php echo $row['older_id']; ?></p>
                             </div>
                             <div class="personal-item">
                                 <h>姓名：</h>
-                                <p>李奶奶</p>
+                                <p><?php echo $row['name']; ?></p>
                             </div>
                             <div class="personal-item">
                                 <h>年龄：</h>
-                                <p>62岁</p>
+                                <p><?php echo $row['age']; ?></p>
                             </div>
                             <div class="personal-item">
                                 <h>生日：</h>
-                                <p>1996年5月4日</p>
+                                <p><?php echo $row['birthday']; ?></p>
                             </div>
                             <div class="personal-item">
                                 <h>联系方式：</h>
-                                <p>13598732561</p>
+                                <p><?php echo $row['phone']; ?></p>
                             </div>
                             <div class="personal-item">
                                 <h>兴趣爱好：</h>
-                                <p>羽毛球</p>
+                                <p><?php echo $row['hobit']; ?></p>
                             </div>
                         </div>
                         <div class="col-md-5 personal-right">
@@ -86,11 +74,11 @@
                             </div>
                             <div class="personal-item">
                                 <h>过敏反应：</h>
-                                <p>芒果</p>
+                                <p><?php echo $row['allergy']; ?></p>
                             </div>
                             <div class="personal-item">
                                 <h>老年病：</h>
-                                <p>高血压</p>
+                                <p><?php echo $row['illhistory']; ?></p>
                             </div>
                             <div class="personal-item">
                                 <h>重大病史：</h>
