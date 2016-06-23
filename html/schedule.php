@@ -12,7 +12,12 @@
 </head>
 <body>
     <div class="container-fluid">
-    <?php require 'header.php' ?>
+    <?php 
+    require 'header.php';
+    $older_id='123';
+    $query="select * from action where older_id='$older_id' order by time asc";
+    $result=mysqli_query($con,$query);
+     ?>
     <div class="row">
             <div class="col-md-2 left-navbar">
                 <ul>
@@ -26,62 +31,20 @@
             <div class="col-md-10 main-content">
                 <div class="schedule">
                     <ul class="timeline">
+                        <?php 
+                        $i=0;
+                        while($row=mysqli_fetch_array($result)){ 
+                            $time=$row['time'];
+                            ?>
                         <li>
-                            <div class="time">2016-06-15</div>
-                            <div class="version">10:00</div>
-                            <div class="number">1</div>
+                            <div class="time"><?php echo $time; ?></div>
+                            <div class="number"><?php echo ++$i; ?></div>
                             <div class="content">
-                                <pre>item1</pre>
+                                <pre><?php echo $row['action']; ?></pre>
                             </div>
                         </li>
-                        <li>
-                            <div class="time">2016-06-15</div>
-                            <div class="version">10:00</div>
-                            <div class="number">2</div>
-                            <div class="content">
-                                <pre>item1</pre>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="time">2016-06-15</div>
-                            <div class="version">10:00</div>
-                            <div class="number">3</div>
-                            <div class="content">
-                                <pre>item1</pre>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="time">2016-06-15</div>
-                            <div class="version">10:00</div>
-                            <div class="number">4</div>
-                            <div class="content">
-                                <pre>item1</pre>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="time">2016-06-15</div>
-                            <div class="version">10:00</div>
-                            <div class="number">5</div>
-                            <div class="content">
-                                <pre>item1</pre>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="time">2016-06-15</div>
-                            <div class="version">10:00</div>
-                            <div class="number">6</div>
-                            <div class="content">
-                                <pre>item1</pre>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="time">2016-06-15</div>
-                            <div class="version">10:00</div>
-                            <div class="number">7</div>
-                            <div class="content">
-                                <pre>item1</pre>
-                            </div>
-                        </li>
+                        <?php } ?>
+
                     </ul>
                     <div class="row schedule-page">
                         <ul class="pager">

@@ -4,7 +4,9 @@ $user_id=$_SESSION['user_id'];
 $con=dboperation::getConnect();
 $result=mysqli_query($con,"select * from older where older_id in (select older_id from older_user where user_id=$user_id)");
 $row=mysqli_fetch_array($result);
-$older_id=$row['older_id'];
+if(!isset($_COOKIE['older_id'])){
+    $older_id=$row['older_id'];
+}
  ?>
         
         <div class="row header">
@@ -19,7 +21,7 @@ $older_id=$row['older_id'];
                         <?php 
                         while($row=mysqli_fetch_array($result))
                         {
-                            echo "<a>".$row['name']."</a>";
+                            echo "<a>".$row['name']."</a>";//onclick
                         }
                          ?>
                         

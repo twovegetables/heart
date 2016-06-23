@@ -19,11 +19,11 @@
         <div class="row">
             <div class="col-md-2 left-navbar">
                 <ul>
-                    <a href="personal.html"><li>个人信息</li></a>
+                    <a href="personal.php"><li>个人信息</li></a>
                     <li id="item2">健康档案</li>
-                    <a href="schedule.html"><li>活动信息</li></a>
-                    <a href="food.html"><li>饮食信息</li></a>
-                    <a href="alert.html"><li>警报记录</li></a>
+                    <a href="schedule.php"><li>活动信息</li></a>
+                    <a href="food.php"><li>饮食信息</li></a>
+                    <a href="alert.php"><li>警报记录</li></a>
                 </ul>
             </div>
             <div class="col-md-10 main-content">
