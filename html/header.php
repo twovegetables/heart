@@ -6,6 +6,7 @@ $result=mysqli_query($con,"select * from older where older_id in (select older_i
 $row=mysqli_fetch_array($result);
 $older_id=0;
 $older_name="";
+
 if(isset($_GET['older_id']))
 {
     $older_id=$_GET['older_id'];

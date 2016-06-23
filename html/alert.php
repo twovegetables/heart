@@ -1,4 +1,11 @@
-<?php require ('../php/isLogin.php'); ?>
+<?php 
+require ('../php/isLogin.php');
+if(!isset($_GET['page'])){
+        $page=0;
+}else{
+    $page=$_GET['page'];
+}
+ ?>
 <!doctype html>
 <html>
 <head>
@@ -26,55 +33,40 @@
             <div class="col-md-10 main-content">
                 <div class=" container alarm_detail">
                     <ul>
+                    <?php 
+                    $query="select * from alert where older_id=$older_id order by time desc limit ".($page*4).",4";
+                    $result=mysqli_query($con,$query);
+                    while($row=mysqli_fetch_array($result))
+                    {?>
+                    
+
                         <li>
                             <div class="img">
                                  <img src="../images/alarm1.png"  width="246" height="130" alt="养老解决方案 智能照护系统 跌倒报警">
                             </div>
-                            <h3>跌倒报警</h3>
-                            <p>2012.06.17&nbsp15:25&nbsp>>&nbsp餐厅</p>
+                            <h3><?php echo $row['type'];?></h3>
+                            <p><?php echo $row['time'];?>&nbsp>>&nbsp<?php echo $row['location'];?></p>
                         </li>
+                        <?php 
+                        $row=mysqli_fetch_array($result);
+                        if(!$row)break;
+                        ?>
                         <li class="even">
                             <div class="img">
                                 <img src="../images/alarm2.png"  width="246" height="130" alt="养老解决方案 智能照护系统 走失报警">
                             </div>
-                            <h3>走失报警</h3>
-                            <p>2012.06.17&nbsp15:25&nbsp>>&nbsp美兰湖</p>
+                            <h3><?php echo $row['type'];?></h3>
+                            <p><?php echo $row['time'];?>&nbsp>>&nbsp<?php echo $row['location'];?></p>
                         </li>
-                        <li>
-                            <div class="img">
-                                <img src="../images/alarm3.png" width="246" height="130" alt="养老解决方案 智能照护系统 生命体征监测／报警">
-                            </div>
-                            <h3>生命体征监测报警</h3>
-                            <p>2012.06.17&nbsp15:25&nbsp>>&nbsp心率</p>
-                        </li>
-                        <li class="even">
-                            <div class="img">
-                                <img src="../images/alarm4.png" width="246" height="130" alt="养老解决方案 智能照护系统 夜间离床未归报警">
-                            </div>
-                            <h3>夜间离床未归报警</h3>
-                            <p>2012.06.17&nbsp15:25&nbsp>>&nbsp餐厅</p>
-                        </li>
+                        <?php } ?>
                     </ul>
                 </div>
                  <div class="row alerm-page">
                         <ul class="pager">
-                            <li><a href="#">上一页</a></li>
-                            <li><a href="#">下一页</a></li>
+                            <li><a <?php if($page!=0)echo "href=\"alert.php?page=".($page-1)."\"";?>>上一页</a></li>;
+                            <li><a <?php echo "href=\"alert.php?page=".($page+1)."\"";?>>下一页</a></li>
                         </ul>
-                    </div>
-                    <div class="row alert-search">
-                        <div class="col-md-2">  
-                        </div>
-                        <div class="col-md-2">
-                            <h>日期选择：</h>
-                        </div>
-                        <div class="col-md-4">
-                            <input type="date" name="date" class="form-control">
-                        </div>
-                        <div class="col-md-4">
-                            <button type="button" class="btn btn-default">查询</button>
-                        </div>
-                    </div>
+                </div>
             </div>
         </div>
     </div>

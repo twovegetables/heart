@@ -64,11 +64,11 @@
                            </div> 
                            <div class="col-md-4">
                             <div class="row search">
+                            <form action="heart_rate.php" method="get">
                                 <label>起始时间:</label>
                                 <input type="date" name="start-time" class="form-control">
-                                <label>结束时间:</label>
-                                <input type="date" name="end-time" class="form-control">
-                                <button type="button" class="btn btn-default">查询</button>
+                                <button type="submit" class="btn btn-default">查询</button>
+                            </form>
                             </div>
                             <div class="row standard">
                                 <h>诊断意见</h>

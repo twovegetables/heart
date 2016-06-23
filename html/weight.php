@@ -4,6 +4,14 @@
         <div class="col-md-8">
             <div id="lineweight" class="diagram"></div>
             <script language="JavaScript">
+            <?php $result=mysqli_query($con,"select * from weight where older_id=$older_id order by date limit 7");
+                                while($row=mysqli_fetch_array($result)){
+                                    $datearr[]=$row['date'];
+                                    $timearr[]=(float)$row['weight'];
+                                }
+                                $datejson=json_encode($datearr);
+                                $timejson=json_encode($timearr);
+                                ?>
                 $(document).ready(function() {  
                     var chart = {
                         type: 'spline'      

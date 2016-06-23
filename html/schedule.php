@@ -1,4 +1,11 @@
-<?php require '../php/isLogin.php' ?>
+<?php 
+require '../php/isLogin.php';
+if(!isset($_GET['page'])){
+        $page=0;
+}else{
+    $page=$_GET['page'];
+}
+?>
 <!doctype html>
 <html>
 <head>
@@ -15,8 +22,10 @@
     <?php 
     require 'header.php';
     $older_id='123';
-    $query="select * from action where older_id='$older_id' order by time asc";
+    $query="select * from action where older_id=$older_id order by time asc limit ".($page*6).",6";
+    echo $query;
     $result=mysqli_query($con,$query);
+
      ?>
     <div class="row">
             <div class="col-md-2 left-navbar">
@@ -32,7 +41,7 @@
                 <div class="schedule">
                     <ul class="timeline">
                         <?php 
-                        $i=0;
+                        $i=$page*6+1;
                         while($row=mysqli_fetch_array($result)){ 
                             $time=$row['time'];
                             ?>
@@ -48,20 +57,9 @@
                     </ul>
                     <div class="row schedule-page">
                         <ul class="pager">
-                            <li><a href="#">上一页</a></li>
-                            <li><a href="#">下一页</a></li>
+                            <li><a <?php if($page!=0)echo "href=\"schedule.php?page=".($page-1)."\"";?>>上一页</a></li>;
+                            <li><a <?php echo "href=\"schedule.php?page=".($page+1)."\"";?>>下一页</a></li>
                         </ul>
-                    </div>
-                    <div class="row schedule-search">
-                        <div class="col-md-2">
-                            <h>日期选择：</h>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="date" name="date" class="form-control">
-                        </div>
-                        <div class="col-md-4">
-                            <button type="button" class="btn btn-default">查询</button>
-                        </div>
                     </div>
                 </div> 
             </div>
