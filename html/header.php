@@ -32,7 +32,7 @@ else
  ?>  
         <div class="row header">
             <div class="col-md-3 header-left">
-                <span><img src="../images/bg.png" alt="image" class="img-circle" id="index-image"></span>
+                <span><img src="<?php echo $row1['picture'];?>" alt="image" class="img-circle" id="index-image"></span>
                 <span id="elder-name"><?php echo $older_name; ?></span>
             </div>
             <div class="col-md-8 header-middle">

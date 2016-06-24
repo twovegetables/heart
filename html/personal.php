@@ -86,7 +86,7 @@
                             </div>
                         </div>
                         <div class="col-md-2 head-photo">
-                            <img src="../images/bg.png" alt="image">
+                            <img src="<?php echo $row['picture'];?>" alt="image">
                         </div>
                     </div>
                 </div> 

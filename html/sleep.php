@@ -12,7 +12,7 @@
                 if(isset($_GET['start-time']))
                 {
                     $start_time=$_GET['start-time'];
-                    $result=mysqli_query($con,"select * from sleeptime where older_id=$older_id and date>='$start_time' order by date");
+                    $result=mysqli_query($con,"select * from sleeptime where older_id=$older_id and date>='$start_time' and date<='$end_time' order by date");
                 }else{
                     $result=mysqli_query($con,"select * from sleeptime where older_id=$older_id order by date desc limit 7");
                 }
@@ -79,9 +79,9 @@
     <div class="row search">
         <form action="sleep.php" method="get">
             <label>起始时间:</label>
-            <input type="date" name="start-time" class="form-control">
+            <input type="date" name="start-time" class="form-control" value="$start_time">
             <label>结束时间:</label>
-            <input type="date" name="end-time" class="form-control">
+            <input type="date" name="end-time" class="form-control" value="$end_time">
             <button type="submit" class="btn btn-default">查询</button>
         </form>
     </div>

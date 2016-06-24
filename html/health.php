@@ -76,31 +76,31 @@
                                     <tbody>
                                         <tr>
                                             <td>心率</td>
-                                            <td>收缩压131--139mmHg，舒张压81--89mmHg</td>
+                                            <td>80</td>
                                         </tr>
                                         <tr>
                                             <td>体温</td>
-                                            <td>收缩压130--90mmHg，舒张压60--80mmHg</td>
+                                            <td>98</td>
                                         </tr>
                                         <tr>
                                             <td>体重</td>
-                                            <td>收缩压≥140mmHg 或舒张压≥90mmHg</td>
+                                            <td>72</td>
                                         </tr>
                                         <tr>
                                             <td>血压</td>
-                                            <td>收缩压≤90mmHg 或舒张压≤60 mmHg</td>
+                                            <td>84</td>
                                         </tr>
                                         <tr>
                                             <td>血糖</td>
-                                            <td>收缩压≤90mmHg 或舒张压≤60 mmHg</td>
+                                            <td>77</td>
                                         </tr>
                                         <tr>
                                             <td>血氧</td>
-                                            <td>收缩压≤90mmHg 或舒张压≤60 mmHg</td>
+                                            <td>54</td>
                                         </tr>
                                         <tr>
                                             <td>睡眠时间</td>
-                                            <td>收缩压≤90mmHg 或舒张压≤60 mmHg</td>
+                                            <td>健康</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -108,7 +108,7 @@
                                 <table class="table table-bordered table-striped">
                                     <tbody>
                                         <tr>
-                                            <td>收缩压131--139mmHg，舒张压81--89mmHg</td>
+                                            <td>健康</td>
                                         </tr>
                                     </tbody>
                                 </table>

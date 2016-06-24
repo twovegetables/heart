@@ -50,8 +50,8 @@ $con=dboperation::getConnect();
           <div class="am-btn-toolbar am-fl">
             <div class="am-btn-group am-btn-group-xs">
             <form action="admin-table.php" method="get">
-              <button type="button" class="am-btn am-btn-default"><a href="admin-older.html"><span class="am-icon-plus"></span>新增</a></button>
-              <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button>
+              <button type="button" class="am-btn am-btn-default"><a href="admin-older.php"><span class="am-icon-plus"></span>新增</a></button>
+              <!-- <button type="button" class="am-btn am-btn-default"><span class="am-icon-trash-o"></span> 删除</button> -->
             <button type="submit" class="am-btn am-btn-default"><span class="am-icon-archive"></span> 排序</button>
            <div class="am-form-group am-margin-left am-fl">
               <select name="order">
@@ -124,7 +124,7 @@ $con=dboperation::getConnect();
                 <div class="am-btn-toolbar">
                   <div class="am-btn-group am-btn-group-xs">
                  <button type="button" class="am-btn am-btn-default"><a href="admin-update.php?older_id=<?php echo $row['older_id'];?>"><span class="am-icon-pencil-square-o"></span>编辑</a></button>
-                    <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger"><a href="../php/deleteuser.php?older_id=$row['older_id']"><span class="am-icon-trash-o"></span> 删除</a></button>
+                    <button type="button" class="am-btn am-btn-default am-btn-xs am-text-danger"><a href="../php/deleteuser.php?older_id=<?php echo $row['older_id'];?>"><span class="am-icon-trash-o"></span> 删除</a></button>
                   </div>
                 </div>
               </td>

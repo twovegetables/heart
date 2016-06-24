@@ -22,17 +22,16 @@ if(!isset($_GET['page'])){
     <?php 
     require 'header.php';
     $older_id='123';
-    $query="select * from action where older_id=$older_id order by time asc limit ".($page*6).",6";
-    echo $query;
+    $query="select * from action where older_id=$older_id order by time desc limit ".($page*6).",6";
     $result=mysqli_query($con,$query);
 
      ?>
     <div class="row">
             <div class="col-md-2 left-navbar">
                 <ul>
-                    <li id="item1">个人信息</li>
+                    <a href="personal.php"><li>个人信息</li></a>
                     <a href="health.php"><li>健康档案</li></a>
-                    <a href="schedule.php"><li>活动信息</li></a>
+                    <a href="schedule.php"><li id="item3">活动信息</li></a>
                     <a href="food.php"><li>饮食信息</li></a>
                     <a href="alert.php"><li>警报记录</li></a>
                 </ul>
@@ -41,7 +40,7 @@ if(!isset($_GET['page'])){
                 <div class="schedule">
                     <ul class="timeline">
                         <?php 
-                        $i=$page*6+1;
+                        $i=$page*6;
                         while($row=mysqli_fetch_array($result)){ 
                             $time=$row['time'];
                             ?>

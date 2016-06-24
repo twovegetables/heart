@@ -42,7 +42,7 @@ if(!isset($_GET['page'])){
 
                         <li>
                             <div class="img">
-                                 <img src="../images/alarm1.png"  width="246" height="130" alt="养老解决方案 智能照护系统 跌倒报警">
+                                 <img src="<?php echo $row['picture'];?>"  width="246" height="130" alt="养老解决方案 智能照护系统 跌倒报警">
                             </div>
                             <h3><?php echo $row['type'];?></h3>
                             <p><?php echo $row['time'];?>&nbsp>>&nbsp<?php echo $row['location'];?></p>
@@ -53,7 +53,7 @@ if(!isset($_GET['page'])){
                         ?>
                         <li class="even">
                             <div class="img">
-                                <img src="../images/alarm2.png"  width="246" height="130" alt="养老解决方案 智能照护系统 走失报警">
+                                <img src="<?php echo $row['picture'];?>" width="246" height="130" alt="养老解决方案 智能照护系统 走失报警">
                             </div>
                             <h3><?php echo $row['type'];?></h3>
                             <p><?php echo $row['time'];?>&nbsp>>&nbsp<?php echo $row['location'];?></p>

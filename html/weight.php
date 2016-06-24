@@ -21,6 +21,7 @@
                     var title = {
                         text: '体重记录图'   
                     };
+                    
                     var xAxis = {
                         categories: <?php echo $datejson;?>,
                         labels: {

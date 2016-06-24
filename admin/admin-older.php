@@ -1,11 +1,3 @@
-<?php 
-require '../php/db.php';
-$con=dboperation::getConnect();
-$older_id=$_GET['older_id'];
-$result=mysqli_query($con,"select * from older where older_id=$older_id");
-$row=mysqli_fetch_array($result);
-?>
-
 <!doctype html>
 <html class="no-js">
 <head>
@@ -76,74 +68,81 @@ $row=mysqli_fetch_array($result);
       </div>
 
       <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-        <form class="am-form am-form-horizontal" action="../php/update_older.php" method="POST">
-        <input type="hidden" name="older_id" value="<?php echo $_GET['older_id'];?>">
+        <form class="am-form am-form-horizontal" action="../php/insert_to_older.php" method="POST">
           <div class="am-form-group">
             <label for="user-name" class="am-u-sm-3 am-form-label">姓名 / Name</label>
             <div class="am-u-sm-9">
-              <input type="text" name="user-name" value="<?php echo $row['name'];?>">
+              <input type="text" name="user-name" placeholder="姓名 / Name">
             </div>
           </div>
-
+          <div class="am-form-group">
+            <label for="user-gender" class="am-u-sm-3 am-form-label">性别 / Gender</label>
+            <div class="am-u-sm-9">
+              <select name="gender">
+                <option value="female">female</option>
+                <option value="male">male</option>
+              </select>
+            </div>
+          </div>
           <div class="am-form-group">
             <label for="user-email" class="am-u-sm-3 am-form-label">生日</label>
             <div class="am-u-sm-9">
-              <input type="date" name="user-birthday" value="<?php echo $row['birthday'];?>">
+              <input type="date" name="user-birthday" placeholder="生日 / Birth">
             </div>
           </div>
 
           <div class="am-form-group">
             <label for="user-phone" class="am-u-sm-3 am-form-label">联系方式 / Contact</label>
             <div class="am-u-sm-9">
-              <input type="text" name="user-phone" value="<?php echo $row['phone'];?>">
+              <input type="text" name="user-phone" placeholder=" 联系方式/ Contact">
             </div>
           </div>
 
           <div class="am-form-group">
             <label for="user-hobby" class="am-u-sm-3 am-form-label">兴趣爱好 / Hobby</label>
             <div class="am-u-sm-9">
-              <input type="text" name="user-QQ" value="<?php echo $row['hobit'];?>">
+              <input type="text" name="user-QQ" placeholder="兴趣爱好 / Hobby / 以-分隔开">
             </div>
           </div>
 
           <div class="am-form-group">
             <label for="user-height" class="am-u-sm-3 am-form-label">身高 / Height</label>
             <div class="am-u-sm-9">
-              <input type="text" name="user-height" value="身高 / Height / cm">
+              <input type="text" name="user-height" placeholder="身高 / Height / cm">
             </div>
           </div>
 
           <div class="am-form-group">
             <label for="user-weight" class="am-u-sm-3 am-form-label">体重 / Weight</label>
             <div class="am-u-sm-9">
-              <input type="text" name="user-weight" value="体重 / Weight / kg">
+              <input type="text" name="user-weight" placeholder="体重 / Weight / kg">
             </div>
           </div>
 
           <div class="am-form-group">
             <label for="user-allergy" class="am-u-sm-3 am-form-label">过敏 / Allergy</label>
             <div class="am-u-sm-9">
-              <input type="text" name="user-allergy" value="<?php echo $row['allergy'];?>">
+              <input type="text" name="user-allergy" placeholder="过敏反应 / Allergy / 以-分隔开">
             </div>
           </div>
 
           <div class="am-form-group">
             <label for="user-illness" class="am-u-sm-3 am-form-label">老年病 / Geriatric</label>
             <div class="am-u-sm-9">
-              <input type="text" name="user-geriatric" value="<?php echo $row['illhistory'];?>">
+              <input type="text" name="user-geriatric" placeholder="老年病 / Geriatric / 以-分隔开">
             </div>
           </div>
 
           <div class="am-form-group">
             <label for="user-disease" class="am-u-sm-3 am-form-label">重大病史 / Disease</label>
             <div class="am-u-sm-9">
-              <input type="text" name="user-disease" value="重大病史 / Disease / 以-分隔开">
+              <input type="text" name="user-disease" placeholder="重大病史 / Disease / 以-分隔开">
             </div>
           </div>
 
           <div class="am-form-group">
             <div class="am-u-sm-9 am-u-sm-push-3">
-              <button type="submit" class="am-btn am-btn-primary">提交</button>
+              <button type="submit" class="am-btn am-btn-primary">添加</button>
             </div>
           </div>
         </form>

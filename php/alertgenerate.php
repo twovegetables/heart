@@ -9,6 +9,6 @@ $locations=array("黑风山","虎啸岭","流沙河","高老庄");
 for($day=1;$day<31;$day+=3){
 	$location=$locations[rand(0,3)];
 	$type=$types[rand(0,3)];
-	echo "insert into alert values($older_id,'$year-$month-$day','$location','$type')";
-	mysqli_query($con,"insert into alert values($older_id,'$year-$month-$day','$location','$type')");
+	echo "CALL insert_to_alert($older_id,'$year-$month-$day','$location','$type')";
+	mysqli_query($con,"CALL insert_to_alert($older_id,'$year-$month-$day','$location','$type')");
 }
