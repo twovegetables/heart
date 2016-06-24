@@ -10,11 +10,7 @@
                                     };
 
                                     var title = {
-                                        text: 'Wind speed during two days'   
-                                    };
-
-                                    var subtitle = {
-                                        text: 'October 6th and 7th 2009 at two locations in Vik i Sogn, Norway'
+                                        text: '血压变化图'   
                                     };
 
                                     var xAxis = {
@@ -26,78 +22,48 @@
 
                                     var yAxis = {
                                         title: {
-                                            text: 'Wind speed (m/s)'
+                                            text: '血压mmHg'
                                         },
-                                        min: 0,
+                                        min: 60,
                                         minorGridLineWidth: 0,
                                         gridLineWidth: 0,
                                         alternateGridColor: null,
-                                        plotBands: [{ // Light air
-                                            from: 0.3,
-                                            to: 1.5,
+                                        plotBands: [{ 
+                                            from: 40,
+                                            to: 90,
                                             color: 'rgba(68, 170, 213, 0.1)',
                                             label: {
-                                                text: 'Light air',
+                                                text: '低血压',
                                                 style: {
                                                     color: '#606060'
                                                 }
                                             }
-                                            }, { // Light breeze
-                                                from: 1.5,
-                                                to: 3.3,
+                                            }, {
+                                                from: 90,
+                                                to: 130,
                                                 color: 'rgba(0, 0, 0, 0)',
                                                 label: {
-                                                    text: 'Light breeze',
+                                                    text: '正常血压',
                                                     style: {
                                                         color: '#606060'
                                                     }
                                                 }
-                                            }, { // Gentle breeze
-                                                from: 3.3,
-                                                to: 5.5,
+                                            }, { 
+                                                from: 131,
+                                                to:139,
                                                 color: 'rgba(68, 170, 213, 0.1)',
                                                 label: {
-                                                    text: 'Gentle breeze',
+                                                    text: '正常高值',
                                                     style: {
                                                         color: '#606060'
                                                     }   
                                                 }
-                                            }, { // Moderate breeze
-                                                from: 5.5,
-                                                to: 8,
+                                            }, {
+                                                from: 140,
+                                                to: 180,
                                                 color: 'rgba(0, 0, 0, 0)',
                                                 label: {
-                                                    text: 'Moderate breeze',
-                                                    style: {
-                                                        color: '#606060'
-                                                    }
-                                                }
-                                            }, { // Fresh breeze
-                                                from: 8,
-                                                to: 11,
-                                                color: 'rgba(68, 170, 213, 0.1)',
-                                                label: {
-                                                    text: 'Fresh breeze',
-                                                    style: {
-                                                        color: '#606060'
-                                                    }
-                                                }
-                                            }, { // Strong breeze
-                                                from: 11,
-                                                to: 14,
-                                                color: 'rgba(0, 0, 0, 0)',
-                                                label: {
-                                                    text: 'Strong breeze',
-                                                    style: {
-                                                        color: '#606060'
-                                                    }
-                                                }   
-                                            }, { // High wind
-                                                from: 14,
-                                                to: 15,
-                                                color: 'rgba(68, 170, 213, 0.1)',
-                                                label: {
-                                                    text: 'High wind',
+                                                    text: '高血压',
                                                     style: {
                                                         color: '#606060'
                                                     }
@@ -106,7 +72,7 @@
                                         };
 
                                         var tooltip = {
-                                            valueSuffix: ' m/s'
+                                            valueSuffix: ' mmHg'
                                         };
 
                                         var plotOptions = {
@@ -120,17 +86,14 @@
                                                 marker: {
                                                     enabled: false
                                                 },
-                                            pointInterval: 3600000, // one hour
+                                            pointInterval: 3600000, 
                                             pointStart: Date.UTC(2009, 9, 6, 0, 0, 0)
                                         }
                                     };
 
                                     var series= [{
-                                        name: 'Vik i Sogn',      
-                                        data: [4.3, 5.1, 4.3, 5.2, 5.4, 4.7, 3.5, 4.1, 5.6, 7.4, 6.9, 7.1,7.9, 7.9, 7.5, 6.7, 7.7, 7.7, 7.4, 7.0, 7.1, 5.8, 5.9, 7.4,8.2, 8.5, 9.4, 8.1, 10.9, 7.1, 7.5, 8.1, 6.8, 3.4, 2.1, 1.9, 2.8, 2.9, 1.3, 4.4, 4.2,3.0, 3.0]
-                                    }, {
-                                        name: 'Norway',
-                                        data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.0, 0.3, 0.0,0.0, 0.4, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0, 0.6, 1.2, 1.7, 0.7, 2.9, 4.1, 2.6, 3.7, 3.9, 1.7, 2.3,3.0, 3.3, 4.8, 5.0, 4.8, 5.0, 3.2, 2.0, 0.9, 0.4, 0.3, 0.5, 0.4]
+                                        name: '此次血压值',      
+                                        data: [4.3, 5.1, 4.3, 5.2, 5.4, 4.7, 3.5, 4.1, 5.6, 7.4, 6.9, 7.1,79, 79, 75, 6.7, 7.7, 7.7, 7.4, 7.0, 7.1, 5.8, 5.9, 7.4,8.2, 8.5, 9.4, 8.1, 10.9, 7.1, 7.5, 8.1, 6.8, 3.4, 2.1, 1.9, 2.8, 2.9, 1.3, 4.4, 4.2,3.0, 3.0]
                                     }];  
 
                                     var navigation = {
@@ -142,7 +105,6 @@
                                     var json = {};
                                     json.chart = chart;
                                     json.title = title;
-                                    json.subtitle = subtitle;
                                     json.tooltip = tooltip;
                                     json.xAxis = xAxis;
                                     json.yAxis = yAxis;  
@@ -167,19 +129,19 @@
                                     <tbody>
                                         <tr>
                                             <td>正常高值</td>
-                                            <td>收缩压131--139mmHg，舒张压81--89mmHg</td>
+                                            <td>收缩压131--139mmHg</td>
                                         </tr>
                                         <tr>
                                             <td>正常血压</td>
-                                            <td>收缩压130--90mmHg，舒张压60--80mmHg</td>
+                                            <td>收缩压130--90mmHg</td>
                                         </tr>
                                         <tr>
                                             <td>高血压</td>
-                                            <td>收缩压≥140mmHg 或舒张压≥90mmHg</td>
+                                            <td>收缩压≥140mmHg</td>
                                         </tr>
                                         <tr>
                                             <td>低血压</td>
-                                            <td>收缩压≤90mmHg 或舒张压≤60 mmHg</td>
+                                            <td>收缩压≤90mmHg</td>
                                         </tr>
                                     </tbody>
                                 </table>

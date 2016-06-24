@@ -27,7 +27,7 @@
                 </ul>
             </div>
             <div class="col-md-10 main-content">
-                <ul id="myTab" class="nav nav-tabs">
+                <ul class="nav navbar-nav">
                     <li class="active">
                         <a href="health.php">总概况</a>
                     </li>
